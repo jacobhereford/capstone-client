@@ -1639,7 +1639,6 @@ webpackJsonp([0],[
 	};
 
 	var deleteAppointment = function deleteAppointment(appointment_id) {
-	  debugger;
 	  return $.ajax({
 	    url: app.host + '/appointments/' + appointment_id,
 	    method: "DELETE",
