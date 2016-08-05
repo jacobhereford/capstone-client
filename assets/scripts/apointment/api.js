@@ -14,7 +14,6 @@ const createAppointment = (data) => {
 };
 
 const deleteAppointment = (appointment_id) => {
-  debugger;
   return $.ajax({
     url: app.host + '/appointments/' + appointment_id,
     method: "DELETE",
