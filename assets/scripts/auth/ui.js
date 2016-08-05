@@ -8,6 +8,7 @@ const appointmentTemplate = require('../../templates/appointmentTemplate.handleb
 const contactApi = require('../contact/api.js');
 const appointmentApi = require('../apointment/api.js');
 const contactUi = require('../contact/ui.js');
+const appointmentUi = require('../apointment/ui.js');
 // const getFormFields = require('../../../lib/get-form-fields.js');
 
 
@@ -40,7 +41,8 @@ const getContactsOnSignIn = () => {
   .done((data) => {
     $('#appointments-table').html('');
     $('#appointments-table').html(appointmentTemplate(data));
-    $('.delete-appointment').click(contactUi.deleteAppointment);
+    // $('.delete-appointment').click(contactUi.deleteAppointment);
+    $('.delete-appointment').on('click', appointmentUi.deleteAppointment);
     $('.update-appointment').on('click', (event) => {
       event.preventDefault();
       let appointment_id = $(event.target).data('id');

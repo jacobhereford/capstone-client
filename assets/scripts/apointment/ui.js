@@ -17,6 +17,7 @@ const getAppointments = () => {
 const deleteAppointment = (event) => {
   event.preventDefault();
   let appointment_id = $(event.target).attr('data-id');
+  debugger;
   api.deleteAppointment(appointment_id)
   .done(removeFromTable(event))
   .fail(failure);
@@ -37,7 +38,15 @@ const displayAppointments = (data) => {
   $('#update-form2').addClass('hide');
   $('#appointments-table').html('');
   $('#appointments-table').html(template(appointments));
-  $('.delete-appointment').click(deleteAppointment);
+  // $('.delete-appointment').on('click', function() {
+  //   console.log('in delete button');
+  //   // event.preventDefault();
+  //   // let appointment_id = $(event.target).attr('data-id');
+  //   // debugger;
+  //   // api.deleteAppointment(appointment_id)
+  //   // .done(removeFromTable(event))
+  //   // .fail(failure);
+  // });
   $('.update-appointment').on('click', (event) => {
     event.preventDefault();
     let appointment_id = $(event.target).data('id');
@@ -59,5 +68,5 @@ module.exports = {
   failure,
   deleteAppointment,
   createAppointmentSuccess,
-updateAppointment
+  updateAppointment
 };
