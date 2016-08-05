@@ -231,8 +231,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	module.exports = {
-	  //  host: 'https://young-hollows-48962.herokuapp.com',
-	  host: 'https://rocky-retreat-87239.herokuapp.com'
+	    host: 'https://rocky-retreat-87239.herokuapp.com'
 	};
 
 /***/ },
@@ -1772,11 +1771,11 @@ webpackJsonp([0],[
 	var deleteAppointment = function deleteAppointment(event) {
 	  event.preventDefault();
 	  var appointment_id = $(event.target).attr('data-id');
-	  debugger;
 	  api.deleteAppointment(appointment_id).done(removeFromTable(event)).fail(failure);
 	};
 
 	var updateAppointment = function updateAppointment(data, appointment_id) {
+	  event.preventDefault();
 	  api.updateAppointment(data, appointment_id).done(getAppointments).fail();
 	};
 
@@ -1937,7 +1936,7 @@ webpackJsonp([0],[
 
 	var addHandlers = function addHandlers() {
 	  $('#create-appointment').on('submit', createAppointment);
-	  $('#update-form').on('submit', updateAppointment);
+	  $('#update-form2').on('submit', updateAppointment);
 	};
 
 	module.exports = {
