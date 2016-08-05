@@ -17,13 +17,13 @@ const getAppointments = () => {
 const deleteAppointment = (event) => {
   event.preventDefault();
   let appointment_id = $(event.target).attr('data-id');
-  debugger;
   api.deleteAppointment(appointment_id)
   .done(removeFromTable(event))
   .fail(failure);
 };
 
 const updateAppointment = (data, appointment_id) => {
+  event.preventDefault();
   api.updateAppointment(data, appointment_id)
   .done(getAppointments)
   .fail();

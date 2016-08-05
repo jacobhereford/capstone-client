@@ -52,7 +52,7 @@ const createAppointment = (event) => {
 
 const addHandlers = () => {
   $('#create-appointment').on('submit', createAppointment);
-  $('#update-form').on('submit', updateAppointment);
+  $('#update-form2').on('submit', updateAppointment);
 };
 
 module.exports = {
