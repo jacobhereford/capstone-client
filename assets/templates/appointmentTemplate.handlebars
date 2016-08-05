@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>What</th>
+      <th>When</th>
+      <th>Where</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#appointments}}
+      <tr>
+        <th scope="row"></th>
+        <td>{{what}}</td>
+        <td>{{when}}</td>
+        <td>{{where}}</td>
+        <td><button class="btn btn-default update-appointment" type="submit" data-id={{id}}>Update appointment</button></td>
+        <td><button class="btn btn-default delete-appointment" data-id={{id}}>Delete appointment</button></td>
+      </tr>
+    {{/appointments}}
+  </tbody>
+</table>

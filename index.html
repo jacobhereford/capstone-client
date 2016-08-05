@@ -1,20 +1,117 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Appointment Book</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+    <h1>Appointments and Contacts List</h1>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+            <input type="text" name="credentials[email]" placeholder="E-mail">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirm">
+            <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign In!</legend>
+            <input type="text" name="credentials[email]" placeholder="E-mail">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" name="submit" value="Sign In!">
+        </fieldset>
+      </form>
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign Out</legend>
+            <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+      <form id="create-contact" class="hide">
+        <fieldset>
+          <legend>Create Contact</legend>
+          <div id="create-alert" class="alert alert-danger hide" role="alert">Please Complete All Fields!</div>
+          <input id="create-1" type="text" name="contact[name]" placeholder="Who is your Contact">
+          <input id="create-2" type="text" name="contact[email]" placeholder="What is their E-mail?">
+          <input id="create-3" type="text" name="contact[phone_number]" placeholder="What is their phone number?">
+          <input id="create-4" type="text" name="contact[works_at]" placeholder="Where do they work?">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+          <input type="submit" name="submit" value="Create Contact">
+        </fieldset>
+      </form>
+      <form id="update-form" class="hide">
+        <fieldset>
+          <legend>Update Contact</legend>
+          <div id="update-alert" class="alert alert-danger hide" role="alert">Please Complete All Fields!</div>
+          <input id="update-1" type="text" name="contact[name]" placeholder="Name">
+          <input id="update-2" type="text" name="contact[email]" placeholder="E-mail">
+          <input id="update-3" type="text" name="contact[phone_number]" placeholder="Phone Number">
+          <input id="update-4" type="text" name="contact[works_at]" placeholder="Works At">
+          <input id="contact-id" type="hidden" name="contact[id]" value="">
+          <input type="submit" name="submit" data-id="" value="Update Contact">
+        </fieldset>
+      </form>
+      <div id="contacts-table">
+      </div>
     </body>
+    <div id="modal-update-contact" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Update Contact</h4>
+          </div>
+          <div id="update-contact-field" class="modal-body">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <form id="create-appointment" class="hide">
+      <fieldset>
+        <legend>Create Appointment</legend>
+        <div id="create-alert2" class="alert alert-danger hide" role="alert">Please Complete All Fields!</div>
+        <input id="create-5" type="text" name="appointment[what]" placeholder="What are you doing?">
+        <input id="create-6" type="text" name="appointment[when]" placeholder="When are you doing it?">
+        <input id="create-7" type="text" name="appointment[where]" placeholder="Where are you doing it?">
+
+        <input type="submit" name="submit" value="Create Appointment">
+      </fieldset>
+    </form>
+    <form id="update-form2" class="hide">
+      <fieldset>
+        <legend>Update Appointment</legend>
+        <div id="update-alert2" class="alert alert-danger hide" role="alert">Please Complete All Fields!</div>
+        <input id="update-5" type="text" name="appointment[what]" placeholder="What">
+        <input id="update-6" type="text" name="appointment[when]" placeholder="When">
+        <input id="update-7" type="text" name="appointment[where]" placeholder="Where">
+        <input id="appointment-id" type="hidden" name="appointment[id]" value="">
+        <input type="submit" name="submit" data-id="" value="Update Appointment">
+      </fieldset>
+    </form>
+    <div id="appointments-table">
+    </div>
+  </body>
+  <div id="modal-update-appointment" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update appointment</h4>
+        </div>
+        <div id="update-appointment-field" class="modal-body">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 </html>

@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>E-mail</th>
+      <th>Phone Number</th>
+      <th>Works At</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#contacts}}
+      <tr>
+        <th scope="row"></th>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{phone_number}}</td>
+        <td>{{works_at}}</td>
+        <td><button class="btn btn-default update-contact" type="submit" data-id={{id}}>Update Contact</button></td>
+        <td><button class="btn btn-default delete-contact" data-id={{id}}>Delete Contact</button></td>
+      </tr>
+    {{/contacts}}
+  </tbody>
+</table>
