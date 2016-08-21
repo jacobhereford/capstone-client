@@ -38,8 +38,7 @@ const displayAppointments = (data) => {
   $('#update-form2').addClass('hide');
   $('#appointments-table').html('');
   $('#appointments-table').html(template(appointments));
-  $('.delete-appointment').on('click', function() {
-    console.log('in delete button');
+  $('.delete-appointment').on('click', function(event) {
     event.preventDefault();
     let appointment_id = $(event.target).attr('data-id');
     api.deleteAppointment(appointment_id)

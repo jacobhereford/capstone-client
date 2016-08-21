@@ -30,7 +30,7 @@ const updateAppointment = (event) => {
 const createAppointment = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  if ($('#create-5').val() === '' || $('#create-5').val() === '' || $('#create-7').val() === '' ) {
+  if ($('#create-5').val() === '' || $('#create-6').val() === '' || $('#create-7').val() === '' ) {
     $('#create-alert2').removeClass('hide');
     return;
   } else {

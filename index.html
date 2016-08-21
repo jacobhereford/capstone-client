@@ -5,12 +5,28 @@
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+      <style>
+    body {
+      background-image: url(blue.jpg);
+      background-size: 100%;
+      background-attachment: fixed;
+      }
+    </style>
     </head>
     <body class="container-fluid">
-    <h1>Appointments and Contacts List</h1>
+      <ul>
+        <li><a href="#sign-up">Sign Up</a></li>
+        <li><a href="#sign-in">Sign In</a></li>
+        <li><a href="#sign-out">Sign Out</a></li>
+        <li><a href="#change-password">Change Password</a></li>
+      </ul>
+    <div class="transbox">
+      <h1>Appointments and Contacts List</h1>
       <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
+            <div id="create-alert" class="alert alert-danger hide" role="alert">Please Complete All Fields!</div>
             <input type="text" name="credentials[email]" placeholder="E-mail">
             <input type="password" name="credentials[password]" placeholder="Password">
             <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirm">
@@ -113,5 +129,5 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
+</div>
 </html>
