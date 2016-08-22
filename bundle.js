@@ -231,7 +231,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	module.exports = {
-	    host: 'https://rocky-retreat-87239.herokuapp.com'
+	    // host: 'https://rocky-retreat-87239.herokuapp.com',
+	    host: 'http://localhost:3000'
 	};
 
 /***/ },
@@ -261,6 +262,14 @@ webpackJsonp([0],[
 	};
 
 	var getContactsOnSignIn = function getContactsOnSignIn() {
+	  $('#sign-out').removeClass('hide');
+	  $('#change-password').removeClass('hide');
+	  $('#sign-in').addClass('hide');
+	  $('#sign-up').addClass('hide');
+	  $('#sign-out1').addClass('show');
+	  $('#change-password1').addClass('show');
+	  $('#sign-in1').addClass('hide');
+	  $('#sign-up1').addClass('hide');
 	  $('#contacts-table').html(template());
 	  $('#create-contact').removeClass('hide');
 	  contactApi.getContact().done(function (data) {
@@ -304,9 +313,13 @@ webpackJsonp([0],[
 	  console.log('User signed out successfully');
 	  app.user = null;
 	  $('#contacts-table').html('');
-	  // $('#create-contact').html('');
+	  $('#create-contact').addClass('hide');
 	  $('#appointments-table').html('');
-	  // $('#create-appointment').html('');
+	  $('#create-appointment').addClass('hide');
+	  $('#sign-in').removeClass('hide');
+	  $('#sign-up').removeClass('hide');
+	  $('#sign-out').addClass('hide');
+	  $('#change-password').addClass('hide');
 	};
 
 	module.exports = {
