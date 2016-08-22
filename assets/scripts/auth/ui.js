@@ -33,8 +33,8 @@ const getContactsOnSignIn = () => {
       let contact_id = $(event.target).data('id');
       $('#contact-id').val(contact_id);
       $('#update-form').removeClass('hide');
+      });
     });
-  });
   $('#appointments-table').html(appointmentTemplate());
   $('#create-appointment').removeClass('hide');
   appointmentApi.getAppointment()
@@ -65,8 +65,11 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
-  $('#contact-table').html('');
-};
+  $('#contacts-table').html('');
+  // $('#create-contact').html('');
+  $('#appointments-table').html('');
+  // $('#create-appointment').html('');
+  };
 
 module.exports = {
   success,
