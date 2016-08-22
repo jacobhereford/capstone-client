@@ -21,6 +21,14 @@ const success = (data) => {
 };
 
 const getContactsOnSignIn = () => {
+  $('#sign-out').removeClass('hide');
+  $('#change-password').removeClass('hide');
+  $('#sign-in').addClass('hide');
+  $('#sign-up').addClass('hide');
+  $('#sign-out1').addClass('show');
+  $('#change-password1').addClass('show');
+  $('#sign-in1').addClass('hide');
+  $('#sign-up1').addClass('hide');
   $('#contacts-table').html(template());
   $('#create-contact').removeClass('hide');
   contactApi.getContact()
@@ -66,9 +74,13 @@ const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
   $('#contacts-table').html('');
-  // $('#create-contact').html('');
+  $('#create-contact').addClass('hide');
   $('#appointments-table').html('');
-  // $('#create-appointment').html('');
+  $('#create-appointment').addClass('hide');
+  $('#sign-in').removeClass('hide');
+  $('#sign-up').removeClass('hide');
+  $('#sign-out').addClass('hide');
+  $('#change-password').addClass('hide');
   };
 
 module.exports = {

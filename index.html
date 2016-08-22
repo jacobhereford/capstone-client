@@ -15,12 +15,12 @@
     </style>
     </head>
     <body class="container-fluid">
-      <ul>
-        <li><a href="#sign-up">Sign Up</a></li>
-        <li><a href="#sign-in">Sign In</a></li>
-        <li><a href="#sign-out">Sign Out</a></li>
-        <li><a href="#change-password">Change Password</a></li>
-      </ul>
+      <!-- <ul>
+        <li id="sign-up1"><a href="#sign-up" class="show">Sign Up</a></li>
+        <li id="sign-in1"><a href="#sign-in" class="show">Sign In</a></li>
+        <li id="sign-out1"><a href="#sign-out" class="hide">Sign Out</a></li>
+        <li id="change-password1"><a href="#change-password" class="hide">Change Password</a></li>
+      </ul> -->
     <div class="transbox">
       <h1>Appointments and Contacts List</h1>
       <form id="sign-up">
@@ -33,7 +33,7 @@
             <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
-      <form id="sign-in">
+      <form id="sign-in" class="show">
         <fieldset>
           <legend>Sign In!</legend>
             <input type="text" name="credentials[email]" placeholder="E-mail">
@@ -41,13 +41,13 @@
             <input type="submit" name="submit" value="Sign In!">
         </fieldset>
       </form>
-      <form id="sign-out">
+      <form id="sign-out" class="hide">
         <fieldset>
           <legend>Sign Out</legend>
             <input type="submit" name="submit" value="Sign out!">
         </fieldset>
       </form>
-      <form id="change-password">
+      <form id="change-password" class="hide">
         <fieldset>
           <legend>Change Password</legend>
             <input type="password" name="passwords[old]" placeholder="Old Password">
